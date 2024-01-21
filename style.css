@@ -1,0 +1,21 @@
+@font-face {
+  font-family: "antipasto_pro_regular";
+  src: url("fonts/antipasto-pro-regular-trial-webfont.woff2") format("woff2"),
+    url("fonts/antipasto-pro-regular-trial-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "robotoregular";
+  src: url("fonts/roboto-regular-webfont.woff2") format("woff2"),
+    url("fonts/roboto-regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+#contenu {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif,"robotoregular";
+}
+.h1 h2 h3 h5 h6 {
+  font-family: "antipasto_pro_regular";
+}
+
