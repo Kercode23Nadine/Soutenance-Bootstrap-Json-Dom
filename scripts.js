@@ -1,13 +1,30 @@
 let modalB = document.querySelector(".modal-body-info");
 
-fetch("https://www.tbads.eu/greta/kercode/ajax/?article=2")
+fetch("https://www.tbads.eu/greta/kercode/ajax/?article=3")
   .then((response) => response.json())
   .then(function (jsonData) {
     title(jsonData);
+    card(jsonData);
     console.log("Réponse :%o", jsonData);
   })
   .catch((msg) => console.log("Message d'erreur:", msg));
 
+//article 1
+function card(jsonData) {
+  // nouveau h5
+  let cardTitleOne = document.querySelector(".card-title-one");
+  let myH5 = document.createElement("h5");
+  myH5.textContent = jsonData.title;
+  cardTitleOne.replaceWith(myH5);
+
+  // nouveau paragraphe
+  let para = document.querySelector(".textChangeOne");
+  let myP = document.createElement("p");
+  myP.textContent = jsonData.content[1];
+  para.replaceWith(myP);
+}
+
+//boite modal 1
 function title(jsonData) {
   //  un nouveau titre
   let newtitle = document.createElement("h3");
@@ -30,24 +47,42 @@ function title(jsonData) {
   newImg.alt = "soldes";
   newImg.classList.add("img-fluid", "p-5", "w-100");
 
-  // Ajout modal-body
+  // Ajout modal
   modalB.appendChild(myDateTitle);
   modalB.appendChild(newtitle);
   modalB.appendChild(newImg);
   modalB.appendChild(newP);
 }
 
-// modal 2
+// Boite modal 2
 
 let modalBis = document.querySelector(".modal-body-info-bis");
 
-fetch("https://www.tbads.eu/greta/kercode/ajax/?article=3")
+fetch("https://www.tbads.eu/greta/kercode/ajax/?article=1")
   .then((response) => response.json())
   .then(function (jsonDataBis) {
     create(jsonDataBis);
+    cardBis(jsonDataBis);
     console.log("Réponse :%o", jsonDataBis);
   })
   .catch((msg) => console.log("Message d'erreur:", msg));
+
+// article 2
+function cardBis(jsonData) {
+  // nouveau h5
+  let cardTitleBis = document.querySelector(".card-titleBis");
+  let myH5Bis = document.createElement("h5");
+  myH5Bis.textContent = jsonData.title;
+  cardTitleBis.replaceWith(myH5Bis);
+
+  // nouveau paragraphe
+  let paraBis = document.querySelector(".textChangeTwo");
+  let myPBis = document.createElement("p");
+  myPBis.textContent = jsonData.content[1];
+  paraBis.replaceWith(myPBis);
+}
+
+// boite modal 2
 function create(jsonDataBis) {
   //  un nouveau titre
   let newTitle = document.createElement("h3");
@@ -75,7 +110,7 @@ function create(jsonDataBis) {
 
   //  nouvelle image
   let newImg = document.createElement("img");
-  newImg.src =jsonDataBis.picture;
+  newImg.src = jsonDataBis.picture;
   newImg.alt = "cuisine";
   newImg.classList.add("img-fluid", "p-5", "w-100");
 
