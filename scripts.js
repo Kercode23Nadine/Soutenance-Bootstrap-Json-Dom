@@ -37,9 +37,7 @@ function title(jsonData) {
   myDateTitle.classList.add("text-center", "fw-bold", "mx-5", "p-3");
   //  nouveau p
   let newP = document.createElement("p");
-  jsonData.content.forEach(function () {
-    newP.textContent = jsonData.content;
-  });
+  newP.textContent = jsonData.content;
   newP.classList.add("m-5", "p-5");
   //  nouvelle image
   let newImg = document.createElement("img");
@@ -103,9 +101,7 @@ function create(jsonDataBis) {
 
   // nouveau p
   let newP = document.createElement("p");
-  jsonDataBis.content.forEach(function () {
-    newP.textContent = jsonDataBis.content;
-  });
+  newP.textContent = jsonDataBis.content;
   newP.classList.add("m-5", "p-5");
 
   //  nouvelle image
