@@ -5,7 +5,8 @@ fetch("https://www.tbads.eu/greta/kercode/ajax/?article=2")
   .then(function (jsonData) {
     title(jsonData);
     console.log("Réponse :%o", jsonData);
-  });
+  })
+  .catch((msg) => console.log("Message d'erreur:", msg));
 
 function title(jsonData) {
   //  un nouveau titre
@@ -25,7 +26,7 @@ function title(jsonData) {
   newP.classList.add("m-5", "p-5");
   //  nouvelle image
   let newImg = document.createElement("img");
-  newImg.src = "https://www.tbads.eu/greta/kercode/ajax/images/image2.jpg";
+  newImg.src = jsonData.picture;
   newImg.alt = "soldes";
   newImg.classList.add("img-fluid", "p-5", "w-100");
 
@@ -45,8 +46,8 @@ fetch("https://www.tbads.eu/greta/kercode/ajax/?article=3")
   .then(function (jsonDataBis) {
     create(jsonDataBis);
     console.log("Réponse :%o", jsonDataBis);
-  });
-
+  })
+  .catch((msg) => console.log("Message d'erreur:", msg));
 function create(jsonDataBis) {
   //  un nouveau titre
   let newTitle = document.createElement("h3");
@@ -74,7 +75,7 @@ function create(jsonDataBis) {
 
   //  nouvelle image
   let newImg = document.createElement("img");
-  newImg.src = "https://www.tbads.eu/greta/kercode/ajax/images/image3.jpg";
+  newImg.src =jsonDataBis.picture;
   newImg.alt = "cuisine";
   newImg.classList.add("img-fluid", "p-5", "w-100");
 
