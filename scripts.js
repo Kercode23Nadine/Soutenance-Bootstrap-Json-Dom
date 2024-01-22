@@ -1,6 +1,6 @@
 let modalB = document.querySelector(".modal-body-info");
 
-fetch("https://www.tbads.eu/greta/kercode/ajax/?article=3")
+fetch("https://www.tbads.eu/greta/kercode/ajax/?article=2")
   .then((response) => response.json())
   .then(function (jsonData) {
     title(jsonData);
@@ -20,7 +20,7 @@ function card(jsonData) {
   // nouveau paragraphe
   let para = document.querySelector(".textChangeOne");
   let myP = document.createElement("p");
-  myP.textContent = jsonData.content[1];
+  myP.textContent = jsonData.content["0"];
   para.replaceWith(myP);
 }
 
@@ -78,7 +78,7 @@ function cardBis(jsonData) {
   // nouveau paragraphe
   let paraBis = document.querySelector(".textChangeTwo");
   let myPBis = document.createElement("p");
-  myPBis.textContent = jsonData.content[1];
+  myPBis.textContent = jsonData.content["0"];
   paraBis.replaceWith(myPBis);
 }
 
